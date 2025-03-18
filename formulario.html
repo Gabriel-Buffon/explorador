@@ -4,148 +4,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cadastro de Usuário</title>
     <style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-    }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
 
-    div {
-        background: white;
-        padding: 25px;
-        width: 420px;
-        border: 3px solid #4CAF50; /* Borda verde */
-        border-radius: 15px; /* Cantos arredondados */
-        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Sombra suave */
-    }
+        .container {
+            background: white;
+            padding: 20px;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
 
-    h1 {
-        text-align: center;
-        color: #333;
-        margin-bottom: 15px;
-    }
+        h1 {
+            text-align: center;
+            font-size: 22px;
+            color: #333;
+        }
 
-    p {
-        font-weight: bold;
-        color: #555;
-        margin-bottom: 10px;
-    }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
 
-    label {
-        font-weight: bold;
-        display: block;
-        margin-top: 10px;
-    }
+        input, textarea, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
 
-    input, textarea, select {
-        width: 100%;
-        padding: 8px;
-        margin-top: 5px;
-        border: 2px solid #ddd;
-        border-radius: 5px;
-        font-size: 16px;
-    }
+        .radio-group, .checkbox-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-top: 5px;
+        }
 
-    textarea {
-        resize: none;
-    }
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
 
-    /* Ajuste para os inputs de rádio e checkbox */
-    input[type="radio"],
-    input[type="checkbox"] {
-        width: auto;
-        margin-right: 5px;
-    }
-
-    .radio-group, .checkbox-group {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-top: 10px;
-    }
-
-    button {
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        padding: 12px;
-        width: 100%;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 18px;
-        margin-top: 15px;
-        transition: background 0.3s ease-in-out;
-    }
-
-    button:hover {
-        background-color: #45a049;
-    }
+        button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 
 <body>
-    <div>
-        <div>
+    <div class="container">
+        <form action="index.html" method="post">
+            <h1>Cadastrar Usuário</h1>
+            
+            <p>1. Dados Pessoais</p>
 
-            <form action="index.html" method="post">
-                <h1> Cadastrar usuário </h1>
-                <p>1 Dados pessoais</p>
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome" required>
 
-                <!--formulario-->
-                <label for="nome">Nome:</label>
-                <input type="text" name="nome" id="nome" required>
-                <label for="email">Email:</label>
-                <input type="email" name="email" id="email" required>
-                <label for="senha">Senha:</label>
-                <input type="password" name="senha" id="senha" required>
-                <label for="confirmarSenha">Confirmar senha:</label>
-                <input type="password" name="senha" id="confirmarSenha" required>
-                <br>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required>
 
-                <!--radio-->
-                <label for="idade">Idade:</label>
-                <label for="mais17">Acima de 17</label>
-                <input type="radio" name="idade" id="mais17">
-                
-                <label for="menosIgual17">Menos ou igual 17</label>
-                <input type="radio" name="idade" id="menosIgual17">
-                
+            <label for="senha">Senha:</label>
+            <input type="password" name="senha" id="senha" required>
 
-                <!--area de texto-->
-                <p>2 perfil</p>
-                <label for="discricao">Descrição:</label>
-                <textarea name="discricao" id="discricao" cols="30" rows="5"></textarea><br>
+            <label for="confirmarSenha">Confirmar senha:</label>
+            <input type="password" name="confirmarSenha" id="confirmarSenha" required>
 
-                <!--select-->
-                <label for="perfil">Perfil de trabalho:</label>
-                <select name="perfil" id="perfil">
-                    <option value="front-end">Front-End Developer</option>
-                    <option value="back-end">Back-End Developer</option>
-                </select>
+            <label>Idade:</label>
+            <div class="radio-group">
+                <label><input type="radio" name="idade" id="mais17"> Acima de 17</label>
+                <label><input type="radio" name="idade" id="menosIgual17"> Menos ou igual a 17</label>
+            </div>
 
-                <!--check box-->
-                <label for="programador">Programador</label>
-                <input type="checkbox" name="programador" id="programador">
-                <label for="design">Design</label>
-                <input type="checkbox" name="design" id="design">
-                <label for="analista">Analista</label>
-                <input type="checkbox" name="analista" id="analista">
-                
+            <p>2. Perfil</p>
+            <label for="descricao">Descrição:</label>
+            <textarea name="descricao" id="descricao" rows="3"></textarea>
 
+            <label for="perfil">Perfil de trabalho:</label>
+            <select name="perfil" id="perfil">
+                <option value="front-end">Front-End Developer</option>
+                <option value="back-end">Back-End Developer</option>
+            </select>
 
-                <button type="submit">Enviar
-                    dados</button>
+            <label>Habilidades:</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="programador" id="programador"> Programador</label>
+                <label><input type="checkbox" name="design" id="design"> Design</label>
+                <label><input type="checkbox" name="analista" id="analista"> Analista</label>
+            </div>
 
-
-        </div>
+            <button type="submit">Enviar Dados</button>
+        </form>
     </div>
-    </form>
 </body>
 
 </html>
