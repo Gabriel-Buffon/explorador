@@ -5,6 +5,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    div {
+        background: white;
+        padding: 25px;
+        width: 420px;
+        border: 3px solid #4CAF50; /* Borda verde */
+        border-radius: 15px; /* Cantos arredondados */
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 15px;
+    }
+
+    p {
+        font-weight: bold;
+        color: #555;
+        margin-bottom: 10px;
+    }
+
+    label {
+        font-weight: bold;
+        display: block;
+        margin-top: 10px;
+    }
+
+    input, textarea, select {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border: 2px solid #ddd;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    textarea {
+        resize: none;
+    }
+
+    /* Ajuste para os inputs de rádio e checkbox */
+    input[type="radio"],
+    input[type="checkbox"] {
+        width: auto;
+        margin-right: 5px;
+    }
+
+    .radio-group, .checkbox-group {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 12px;
+        width: 100%;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 18px;
+        margin-top: 15px;
+        transition: background 0.3s ease-in-out;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+    </style>
 </head>
 
 <body>
@@ -23,7 +105,8 @@
                 <label for="senha">Senha:</label>
                 <input type="password" name="senha" id="senha" required>
                 <label for="confirmarSenha">Confirmar senha:</label>
-                <input type="password" name="senha" id="confirmarSenha" required><br>
+                <input type="password" name="senha" id="confirmarSenha" required>
+                <br><br>
 
                 <!--radio-->
                 <label for="idade">Idade:</label>
@@ -34,8 +117,8 @@
 
                 <!--area de texto-->
                 <p>2 perfil</p>
-                <label for="discricao">Discrição</label>
-                <textarea name="discricao" id="discricao" cols="30" rows="5"></textarea>
+                <label for="discricao">Descrição:</label>
+                <textarea name="discricao" id="discricao" cols="30" rows="5"></textarea><br>
 
                 <!--select-->
                 <label for="perfil">Perfil de trabalho:</label>
@@ -45,15 +128,13 @@
                 </select>
 
                 <!--check box-->
-                <input type="checkbox" name="programador" id="programador">
                 <label for="programador">Programador</label>
-                <input type="checkbox" name="design" id="design">
+                <input type="checkbox" name="programador" id="programador">
                 <label for="design">Design</label>
-                <input type="checkbox" name="analista" id="analista">
+                <input type="checkbox" name="design" id="design">
                 <label for="analista">Analista</label>
-
-
-
+                <input type="checkbox" name="analista" id="analista">
+                <br><br>
 
 
                 <button type="submit">Enviar
